@@ -1,20 +1,19 @@
 // src/components/HeroSection.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SocialLinks from './SocialLinks';
 import { FaPlay } from 'react-icons/fa';
 import { useTheme } from '../ThemeContext';
+import useScrollFadeOut from '../hooks/useScrollFadeOut';
 
 function HeroSection() {
   const profileImagePath = '/Passfoto.jpeg';
+  const sectionRef = useRef(null); // Create a ref
   const { theme } = useTheme();
 
   const [profileVisible, setProfileVisible] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
   const [socialVisible, setSocialVisible] = useState(false);
   const [buttonsVisible, setButtonsVisible] = useState(false);
-
-   // New state for controlling content opacity on scroll
-   const [contentOpacity, setContentOpacity] = useState(1);
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -41,37 +40,10 @@ function HeroSection() {
     };
   }, []);
 
-
-  // --- Scroll-based Fade-out effect ---
-  useEffect(() => {
-    const handleScroll = () => {
-      // Get the current scroll position
-      const scrollY = window.scrollY;
-      // Get the height of the HeroSection. We'll use this to determine when fade-out completes.
-      // We might need a ref here for accuracy, but for simplicity, let's estimate a scroll threshold.
-      // A common approach is to fade out over the first 500-800 pixels of scroll.
-      const fadeThreshold = 700; // Adjust this value to control how fast it fades out
-
-      let newOpacity = 1 - (scrollY / fadeThreshold);
-
-      // Clamp the opacity value between 0 and 1
-      newOpacity = Math.max(0.2, Math.min(1, newOpacity));
-
-      setContentOpacity(newOpacity);
-    };
-
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
-
+  const contentOpacity = useScrollFadeOut(sectionRef, 700); // Use the custom hook
 
   return (
-    <section className="flex-grow flex flex-col items-center justify-center text-center p-8 relative overflow-hidden pt-24">
+    <section ref={sectionRef} className="flex-grow flex flex-col items-center justify-center text-center p-8 relative overflow-hidden pt-24">
       {/* Profile Image with conditional animation */}
       <div
         className="relative z-10 flex flex-col items-center w-full"

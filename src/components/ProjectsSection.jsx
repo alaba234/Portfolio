@@ -1,6 +1,10 @@
 // src/components/ProjectsSection.jsx
-import React from 'react';
+import React, { use, useRef } from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import useScrollFadeOut from '../hooks/useScrollFadeOut'; 
+
+
+
 
 // Placeholder data for your projects - easily expandable!
 const projectsData = [
@@ -31,10 +35,15 @@ const projectsData = [
   // Add more project objects here!
 ];
 
+
+
 const ProjectsSection = () => {
+const sectionRef = useRef(null); // Create a ref
+const contentOpacity = useScrollFadeOut(sectionRef,700); // Use the custom hook for scroll fade-out effect
+
   return (
-    <section id="projects" className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen">
-      <div className="container mx-auto max-w-6xl">
+    <section ref={sectionRef} id="projects" className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen">
+      <div className="container mx-auto max-w-6xl"  style={{ opacity: contentOpacity }}>
         <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
 
         {/* Projects Grid */}

@@ -1,6 +1,7 @@
 // src/components/SkillsSection.jsx
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaCode, FaMicrochip, FaLaptopCode } from 'react-icons/fa';
+import useScrollFadeOut from '../hooks/useScrollFadeOut'; 
 
 // Data for the skills cards - easily expandable!
 const skillsData = [
@@ -48,13 +49,17 @@ const expertiseData = [
 ];
 
 const SkillsSection = () => {
+  const skillCards = useRef(null); // Create a ref
+  const otherSkillsCard = useRef(null); // Create a ref for the other skills card
+  const skillCardsOpacity = useScrollFadeOut(skillCards, 700); // Use the custom hook for scroll fade-out effect
+  const otherSkillsOpacity = useScrollFadeOut(otherSkillsCard, 700); // Use the custom hook for scroll fade-out effect
   return (
     <section id="skills" className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center justify-center">
-      <div className="container mx-auto max-w-6xl">
+      <div  className="container mx-auto max-w-6xl">
         <h2 className="text-4xl font-bold text-center mb-12">My Expertise</h2>
 
         {/* Top Two Skills Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div ref={skillCards} style={{opacity: skillCardsOpacity}} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {skillsData.map((card) => (
             <div key={card.title} className="bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700 hover:border-gradient-start transition-colors duration-300">
               <div className="flex items-center mb-6">
@@ -82,7 +87,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Bottom Cross-Domain Expertise Card */}
-        <div className="bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700 hover:border-gradient-start transition-colors duration-300">
+        <div ref={otherSkillsCard} style={{opacity: otherSkillsOpacity}} className="bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700 hover:border-gradient-start transition-colors duration-300">
           <div className="flex items-center mb-6">
             <FaLaptopCode className="text-2xl text-white mr-2" />
             <h3 className="text-2xl font-bold">Other skills</h3>

@@ -3,13 +3,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaLaptopCode, FaMicrochip, FaBolt } from 'react-icons/fa';
 // @ts-ignore
 import Timeline from './Timeline.jsx'; // Import the Timeline component
+import useScrollFadeOut from '../hooks/useScrollFadeOut'; 
 
 function AboutSection() {
 
   const aboutImagePath = '/thu.png'; // Make sure this image exists in your public folder!
 
   const [lineVisible, setLineVisible] = useState(false);
+
   const sectionRef = useRef(null);
+  const timelineRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,13 +40,17 @@ function AboutSection() {
     };
   }, []);
 
+  
+  const contentOpacity = useScrollFadeOut(sectionRef,700);
+  const contentOpacity_1 = useScrollFadeOut(timelineRef, 700); // Use the custom hook for scroll fade-out effect
+
   return (
-    <section ref={sectionRef} className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center justify-center relative">
+    <section className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center justify-center relative">
     
       <div className="container mx-auto max-w-6xl">
         {/* Top Section: Text and Image */}
         {/* This is the div controlling the flex layout for the two columns */}
-        <div className="flex flex-col lg:flex-row items-start gap-12 mb-16"> {/* Assuming you changed items-center to items-start */}
+        <div ref={sectionRef}  style={{ opacity: contentOpacity }} className="flex flex-col lg:flex-row items-start gap-12 mb-16"> {/* Assuming you changed items-center to items-start */}
           {/* Left Column: Text Content (this stays the same) */}
           <div className="flex-1 lg:pr-8 text-center lg:text-left">
             <p className="text-md md:text-base leading-relaxed mb-6">
