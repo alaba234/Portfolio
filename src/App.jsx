@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
+import SkillsSection from './components/SkillsSection.jsx';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <HeroSection />
       {/* Add more content here to make the page scrollable */}
       <AboutSection />
+      <SkillsSection/>
       <div className="h-screen bg-gray-300 dark:bg-gray-800 flex items-center justify-center text-3xl">
         Even More Content
       </div>

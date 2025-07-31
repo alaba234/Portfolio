@@ -1,6 +1,8 @@
 // src/components/AboutSection.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { FaLaptopCode, FaMicrochip, FaBolt } from 'react-icons/fa';
+// @ts-ignore
+import Timeline from './Timeline.jsx'; // Import the Timeline component
 
 function AboutSection() {
 
@@ -115,9 +117,14 @@ function AboutSection() {
 
         </div>
 
-        {/* Bottom Section: Statistics */}
-       
+      <div className="mt-16 mb-24">
+              <h2 className="text-3xl md:text-4xl font-bold text-center lg:text-left mb-12">My Journey</h2>
+              <Timeline />
+            </div>
+  
       </div>
+
+
     </section>
   );
 }
