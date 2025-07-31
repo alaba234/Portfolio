@@ -19,6 +19,7 @@ const skillsData = [
       {name: 'Matlab', percentage: '90%' },
       { name: 'Docker', percentage: '70%' },
       {name: 'Machine Learning', percentage: '80%' },
+      { name: 'Gradle', percentage: '80%' },
     ],
   },
   {
@@ -89,7 +90,7 @@ const SkillsSection = () => {
           <p className="text-gray-300 leading-relaxed mb-6">
             My unique background combines software engineering principles with
             embedded systems knowledge, enabling me to build comprehensive solutions
-            from hardware to user interface.
+            from hardware to user interface.  
           </p>
           <div className="flex flex-wrap gap-4">
             {expertiseData.map((tag) => (
