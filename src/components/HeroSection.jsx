@@ -8,12 +8,21 @@ import useScrollFadeOut from '../hooks/useScrollFadeOut';
 function HeroSection() {
   const profileImagePath = '/Passfoto.jpeg';
   const sectionRef = useRef(null); // Create a ref
+  const sectionRef2 = useRef(null); // Create a ref for the second section
   const { theme } = useTheme();
 
   const [profileVisible, setProfileVisible] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
   const [socialVisible, setSocialVisible] = useState(false);
   const [buttonsVisible, setButtonsVisible] = useState(false);
+
+
+  const jumpToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -40,14 +49,15 @@ function HeroSection() {
     };
   }, []);
 
-  const contentOpacity = useScrollFadeOut(sectionRef, 700); // Use the custom hook
+  const contentOpacity = useScrollFadeOut(sectionRef, 10); // Use the custom hook
+  const contentOpacity2 = useScrollFadeOut(sectionRef2, 100); // Use the custom hook for the second section
 
   return (
-    <section ref={sectionRef} className="flex-grow flex flex-col items-center justify-center text-center p-8 relative overflow-hidden pt-24">
+    <section id='home' className="flex-grow flex flex-col items-center justify-center text-center p-8 relative overflow-hidden pt-24">
       {/* Profile Image with conditional animation */}
       <div
         className="relative z-10 flex flex-col items-center w-full"
-        style={{ opacity: contentOpacity }} // Apply the calculated opacity
+        // Apply the calculated opacity
       >
       <div
         className={`relative mb-16 md:mb-20 w-36 h-36 md:w-48 md:h-48 transition-all duration-700 ease-out
@@ -70,7 +80,7 @@ function HeroSection() {
       </div>
 
       {/* Main Content (Title, Description) with conditional animation */}
-      <div className={`relative text-center max-w-5xl mx-auto mb-12 transition-all duration-700 ease-out
+      <div ref={sectionRef} style={{ opacity: contentOpacity }}   className={`relative text-center max-w-5xl mx-auto mb-12 transition-all duration-700 ease-out
                     ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
         <h1 className="text-3xl md:text-4xl lg:text- font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -92,18 +102,17 @@ function HeroSection() {
       </div>
 
       {/* Action Buttons with conditional animation */}
-      <div
+      <div ref={sectionRef2} style={{ opacity: contentOpacity2}} 
         className={`flex flex-col sm:flex-row gap-4 justify-center items-center mt-8
                     transition-all duration-700 ease-out
                     ${buttonsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        <button className="bg-btn-green hover:bg-btn-green-hover text-white px-8 py-3 rounded-lg transition-all transform hover:scale-105 flex items-center space-x-2 w-full sm:w-auto justify-center">
-          <FaPlay size={20} className="mr-2" /> View My Work
+        <button onClick={jumpToProjects} className="px-8 py-4 text-white font-bold rounded-full bg-gradient-to-r from-neon-green to-blue-500 hover:scale-105 transform transition-transform duration-300 shadow-md">
+         View My Work
         </button>
-        <button className="border border-dark-gray-button-border dark:border-border-dark
-                           hover:border-gradient-start text-light-theme-text dark:text-dark-theme-text
-                           hover:text-gradient-start px-8 py-3 rounded-lg transition-all transform hover:scale-105
-                           w-full sm:w-auto bg-dark-gray-button dark:bg-gray-800 hover:bg-dark-gray-button-hover dark:hover:bg-gray-700">
+        <button className="px-8 py-4 text-white font-bold rounded-full bg-gradient-to-r from-neon-green
+        to-blue-500 hover:scale-105
+         transform transition-transform duration-300 shadow-md">
           Get In Touch
         </button>
       </div>

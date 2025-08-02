@@ -21,15 +21,15 @@ const ContactSection = () => {
             <div className="space-y-6 text-gray-300 mb-12">
               <div className="flex items-center justify-center lg:justify-start space-x-4">
                 <FaEnvelope className="text-neon-green text-xl" />
-                <span>alex.rivera@email.com</span>
+                <span>johannes.hirt@t-online.de</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start space-x-4">
                 <FaPhone className="text-neon-green text-xl" />
-                <span>+1 (555) 123-4567</span>
+                <span>+4915121730329</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start space-x-4">
                 <FaMapMarkerAlt className="text-neon-green text-xl" />
-                <span>San Francisco, CA</span>
+                <span>Ulm, DE</span>
               </div>
             </div>
 

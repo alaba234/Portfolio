@@ -45,7 +45,7 @@ function AboutSection() {
   const contentOpacity_1 = useScrollFadeOut(timelineRef, 700); // Use the custom hook for scroll fade-out effect
 
   return (
-    <section className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center justify-center relative">
+    <section id='about' className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center justify-center relative">
     
       <div className="container mx-auto max-w-6xl">
         {/* Top Section: Text and Image */}
@@ -53,6 +53,7 @@ function AboutSection() {
         <div ref={sectionRef}  style={{ opacity: contentOpacity }} className="flex flex-col lg:flex-row items-start gap-12 mb-16"> {/* Assuming you changed items-center to items-start */}
           {/* Left Column: Text Content (this stays the same) */}
           <div className="flex-1 lg:pr-8 text-center lg:text-left">
+            <h2 className="text-4xl font-bold text-center mb-12">About me</h2>
             <p className="text-md md:text-base leading-relaxed mb-6">
               I'm a passionate software engineer with a unique blend of software
               development and embedded systems expertise.

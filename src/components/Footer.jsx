@@ -10,8 +10,8 @@ const Footer = () => {
           
           {/* Left Side: Text */}
           <div className="text-center md:text-left mb-6 md:mb-0">
-            <p className="text-gray-300 text-lg font-semibold">Software Engineer & Systems Specialist</p>
-            <p className="text-gray-500 text-sm mt-2">© 2024 Alex Rivera. All rights reserved.</p>
+            <p className="text-gray-300 text-lg font-semibold">Software Engineer & Systems Engineer</p>
+            <p className="text-gray-500 text-sm mt-2">© 2025 Johannes Hirt. All rights reserved.</p>
           </div>
           
           {/* Right Side: Socials and Button */}
@@ -30,11 +30,6 @@ const Footer = () => {
                 <FaEnvelope className="text-white text-xl" />
               </a>
             </div>
-            
-            <a href="#" className="flex items-center space-x-3 px-6 py-3 text-white font-bold rounded-full bg-gradient-to-r from-neon-green to-blue-500 hover:scale-105 transform transition-transform duration-300 shadow-md">
-              <FaDownload />
-              <span>Download Resume</span>
-            </a>
           </div>
         </div>
       </div>
