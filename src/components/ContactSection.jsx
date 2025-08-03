@@ -39,7 +39,6 @@ const ContactSection = () => {
       });
 
       setIsSubmitting(false);
-      setIsSubmitted(true);
       setFormData({ name: "", email: "", message: "" }); // Clear form
     } catch (error) {
       console.error("Form submission error:", error);
@@ -114,7 +113,7 @@ const ContactSection = () => {
               data-netlify-honeypot="bot-field" // An anti-spam field
               onSubmit={handleSubmit}
               className="w-full flex flex-col gap-4"
-              netlify
+            
             >
               {/* A hidden field for Netlify Forms */}
               <input type="hidden" name="form-name" value="contact" />
