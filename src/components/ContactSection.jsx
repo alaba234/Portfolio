@@ -49,18 +49,6 @@ const ContactSection = () => {
     }
   };
 
-  if (isSubmitted) {
-    return (
-      <div className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 text-center min-h-screen flex items-center justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-neon-green">
-          Thank you for your message!
-        </h2>
-        <p className="text-gray-400 mt-4">
-          I will get back to you as soon as possible.
-        </p>
-      </div>
-    );
-  }
 
   return (
     <section
