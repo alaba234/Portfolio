@@ -115,6 +115,7 @@ const ContactSection = () => {
               data-netlify-honeypot="bot-field" // An anti-spam field
               onSubmit={handleSubmit}
               className="w-full flex flex-col gap-4"
+              netlfiy
             >
               {/* A hidden field for Netlify Forms */}
               <input type="hidden" name="form-name" value="contact" />
@@ -193,7 +194,6 @@ const ContactSection = () => {
                     <span>Sending...</span>
                   ) : (
                     <>
-                      <FaPaperPlane className="text-lg" />
                       <span>Send Message</span>
                     </>
                   )}
