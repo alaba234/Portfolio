@@ -1,8 +1,55 @@
 // src/components/ContactSection.jsx
-import React from 'react';
+import React, {useState }from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const ContactSection = () => {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // This is the Netlify-recommended way to submit forms with JavaScript
+    const encoded = new URLSearchParams(formData).toString();
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encoded,
+      });
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '' }); // Clear form
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setIsSubmitting(false);
+      // You might want to set an error state here
+    }
+  };
+
+  if (isSubmitted) {
+    return (
+       <div className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 text-center min-h-screen flex items-center justify-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-neon-green">Thank you for your message!</h2>
+        <p className="text-gray-400 mt-4">I will get back to you as soon as possible.</p>
+      </div>
+    );
+  }
+
   return (
     <section id="contact" className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24">
       <div className="container mx-auto max-w-6xl">
@@ -49,8 +96,13 @@ const ContactSection = () => {
 
           {/* Right Column: Contact Form */}
           <div className="flex-1">
-            <form action="#" method="POST" className="space-y-6">
+            <form  name="contact" // Give your form a name
+                   method="POST" // Use the POST method
+                   data-netlify="true" // This is the key attribute for Netlify Forms
+                  data-netlify-honeypot="bot-field" // An anti-spam field
+                  className="w-full flex flex-col gap-4">
               {/* Name */}
+              
               <div>
                 <label htmlFor="name" className="sr-only">Name</label>
                 <input

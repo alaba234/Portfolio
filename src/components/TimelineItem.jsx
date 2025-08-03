@@ -3,8 +3,9 @@ import React, { useRef } from 'react';
 import useScrollFadeOut from '../hooks/useScrollFadeOut';
 
 const TimelineItem = ({ item }) => {
-  const itemRef = useRef(null);
-  const contentOpacity = useScrollFadeOut(itemRef, 500);
+    const itemRef = useRef(null);
+  // Use a factor instead of a fixed pixel value
+  const contentOpacity = useScrollFadeOut(itemRef, 0.5);
 
   return (
     <div

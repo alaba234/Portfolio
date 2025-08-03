@@ -22,8 +22,7 @@ const projectsData = [
   },
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1549492429-1667d4f9b8c0?fit=crop&w=800&q=80",
+    image:"/diy3DScanner.png",
     title: "DIY 3D-Scanner",
     description:
       "Embedded systems project for a 3D scanner using a LiDAR sensor",

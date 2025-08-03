@@ -51,8 +51,8 @@ const expertiseData = [
 const SkillsSection = () => {
   const skillCards = useRef(null); // Create a ref
   const otherSkillsCard = useRef(null); // Create a ref for the other skills card
-  const skillCardsOpacity = useScrollFadeOut(skillCards, 700); // Use the custom hook for scroll fade-out effect
-  const otherSkillsOpacity = useScrollFadeOut(otherSkillsCard, 700); // Use the custom hook for scroll fade-out effect
+  const skillCardsOpacity = useScrollFadeOut(skillCards, 0.5); // Use the custom hook for scroll fade-out effect
+  const otherSkillsOpacity = useScrollFadeOut(otherSkillsCard, 0.5); // Use the custom hook for scroll fade-out effect
   return (
     <section id="skills" className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center justify-center">
       <div  className="container mx-auto max-w-6xl">
