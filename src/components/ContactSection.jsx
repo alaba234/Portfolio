@@ -1,13 +1,19 @@
 // src/components/ContactSection.jsx
-import React, {useState }from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import React, { useState } from "react";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaLinkedin,
+  FaGithub,
+  FaTwitter,
+} from "react-icons/fa";
 
 const ContactSection = () => {
-
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -33,7 +39,7 @@ const ContactSection = () => {
 
       setIsSubmitting(false);
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' }); // Clear form
+      setFormData({ name: "", email: "", message: "" }); // Clear form
     } catch (error) {
       console.error("Form submission error:", error);
       setIsSubmitting(false);
@@ -43,15 +49,22 @@ const ContactSection = () => {
 
   if (isSubmitted) {
     return (
-       <div className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 text-center min-h-screen flex items-center justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-neon-green">Thank you for your message!</h2>
-        <p className="text-gray-400 mt-4">I will get back to you as soon as possible.</p>
+      <div className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 text-center min-h-screen flex items-center justify-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-neon-green">
+          Thank you for your message!
+        </h2>
+        <p className="text-gray-400 mt-4">
+          I will get back to you as soon as possible.
+        </p>
       </div>
     );
   }
 
   return (
-    <section id="contact" className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24">
+    <section
+      id="contact"
+      className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24"
+    >
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
 
@@ -82,13 +95,22 @@ const ContactSection = () => {
 
             {/* Social Media Icons */}
             <div className="flex justify-center lg:justify-start space-x-6">
-              <a href="#" className="text-white hover:text-neon-green transition-colors duration-300">
+              <a
+                href="#"
+                className="text-white hover:text-neon-green transition-colors duration-300"
+              >
                 <FaLinkedin className="text-2xl" />
               </a>
-              <a href="#" className="text-white hover:text-neon-green transition-colors duration-300">
+              <a
+                href="#"
+                className="text-white hover:text-neon-green transition-colors duration-300"
+              >
                 <FaGithub className="text-2xl" />
               </a>
-              <a href="#" className="text-white hover:text-neon-green transition-colors duration-300">
+              <a
+                href="#"
+                className="text-white hover:text-neon-green transition-colors duration-300"
+              >
                 <FaTwitter className="text-2xl" />
               </a>
             </div>
@@ -96,26 +118,37 @@ const ContactSection = () => {
 
           {/* Right Column: Contact Form */}
           <div className="flex-1">
-            <form  name="contact" // Give your form a name
-                   method="POST" // Use the POST method
-                   data-netlify="true" // This is the key attribute for Netlify Forms
-                  data-netlify-honeypot="bot-field" // An anti-spam field
-                  className="w-full flex flex-col gap-4">
-              {/* Name */}
-              
+            <form
+              name="contact" // Give your form a name
+              method="POST" // Use the POST method
+              data-netlify="true" // This is the key attribute for Netlify Forms
+              data-netlify-honeypot="bot-field" // An anti-spam field
+              onSubmit={handleSubmit}
+              className="w-full flex flex-col gap-4"
+            >
+              {/* A hidden field for Netlify Forms */}
+              <input type="hidden" name="form-name" value="contact" />
+
               <div>
-                <label htmlFor="name" className="sr-only">Name</label>
+                <label htmlFor="name" className="sr-only">
+                  Name
+                </label>
                 <input
                   type="text"
                   name="name"
                   id="name"
                   placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
                 />
               </div>
               {/* Email */}
               <div>
-                <label htmlFor="email" className="sr-only">Email</label>
+                <label htmlFor="email" className="sr-only">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -126,33 +159,51 @@ const ContactSection = () => {
               </div>
               {/* Subject */}
               <div>
-                <label htmlFor="subject" className="sr-only">Subject</label>
+                <label htmlFor="subject" className="sr-only">
+                  Subject
+                </label>
                 <input
                   type="text"
                   name="subject"
                   id="subject"
                   placeholder="Project collaboration"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
                 />
               </div>
               {/* Message */}
               <div>
-                <label htmlFor="message" className="sr-only">Message</label>
+                <label htmlFor="message" className="sr-only">
+                  Message
+                </label>
                 <textarea
                   name="message"
                   id="message"
                   rows="6"
                   placeholder="Tell me about your project..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300 resize-none"
                 ></textarea>
               </div>
               {/* Submit Button */}
               <div>
                 <button
+                  disabled={isSubmitting}
                   type="submit"
                   className="w-full p-4 rounded-lg text-white font-bold bg-gradient-to-r from-neon-green to-blue-500 hover:scale-105 transform transition-transform duration-300 shadow-md"
                 >
-                  Send Message
+                  {isSubmitting ? (
+                    <span>Sending...</span>
+                  ) : (
+                    <>
+                      <FaPaperPlane className="text-lg" />
+                      <span>Send Message</span>
+                    </>
+                  )}
                 </button>
               </div>
             </form>
