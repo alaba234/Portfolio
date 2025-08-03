@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaDownload } from 'react-icons/fa';
+import SocialLinks from './SocialLinks';
 
 const Footer = () => {
   return (
@@ -16,20 +17,7 @@ const Footer = () => {
           
           {/* Right Side: Socials and Button */}
           <div className="flex flex-col items-center md:items-end">
-            <div className="flex space-x-4 mb-4">
-              <a href="#" aria-label="GitHub" className="p-3 rounded-lg bg-gray-800 border border-gray-700 hover:border-neon-green transition-colors duration-300">
-                <FaGithub className="text-white text-xl" />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="p-3 rounded-lg bg-gray-800 border border-gray-700 hover:border-neon-green transition-colors duration-300">
-                <FaLinkedin className="text-white text-xl" />
-              </a>
-              <a href="#" aria-label="Twitter" className="p-3 rounded-lg bg-gray-800 border border-gray-700 hover:border-neon-green transition-colors duration-300">
-                <FaTwitter className="text-white text-xl" />
-              </a>
-              <a href="#" aria-label="Email" className="p-3 rounded-lg bg-gray-800 border border-gray-700 hover:border-neon-green transition-colors duration-300">
-                <FaEnvelope className="text-white text-xl" />
-              </a>
-            </div>
+            <SocialLinks />
           </div>
         </div>
       </div>

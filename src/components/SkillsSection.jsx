@@ -46,6 +46,8 @@ const expertiseData = [
   'Teamwork',
   'Problem Solving',
   'SCRUM Methodology',
+  'CI/CD,',
+  'DevOps Practices',
 ];
 
 const SkillsSection = () => {

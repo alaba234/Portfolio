@@ -5,9 +5,6 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
-  FaLinkedin,
-  FaGithub,
-  FaTwitter,
 } from "react-icons/fa";
 
 const ContactSection = () => {
@@ -82,26 +79,7 @@ const ContactSection = () => {
             </div>
 
             {/* Social Media Icons */}
-            <div className="flex justify-center lg:justify-start space-x-6">
-              <a
-                href="#"
-                className="text-white hover:text-neon-green transition-colors duration-300"
-              >
-                <FaLinkedin className="text-2xl" />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-neon-green transition-colors duration-300"
-              >
-                <FaGithub className="text-2xl" />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-neon-green transition-colors duration-300"
-              >
-                <FaTwitter className="text-2xl" />
-              </a>
-            </div>
+           
           </div>
 
           {/* Right Column: Contact Form */}

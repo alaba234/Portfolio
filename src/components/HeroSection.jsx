@@ -83,7 +83,7 @@ function HeroSection() {
                     ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
         <h1 className="text-3xl md:text-4xl lg:text- font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-          Master Student in Systems Engineering and Management with a specialization in Electrical ngineering
+          Master Student in Systems Engineering and Management with a specialization in Electrical Engineering
         </h1>
 
         <p className="text-base md:text-lg text-gray-400 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
