@@ -21,29 +21,6 @@ const ContactSection = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // This is the Netlify-recommended way to submit forms with JavaScript
-    const encoded = new URLSearchParams(formData).toString();
-
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encoded,
-      });
-
-      setIsSubmitting(false);
-      setFormData({ name: "", email: "", message: "" }); // Clear form
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setIsSubmitting(false);
-      // You might want to set an error state here
-    }
-  };
-
 
   return (
     <section
@@ -106,7 +83,7 @@ const ContactSection = () => {
                   id="name"
                   placeholder="Your name"
                   value={formData.name}
-                  onChange={handleChange}
+                
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
                 />
@@ -122,7 +99,7 @@ const ContactSection = () => {
                   id="email"
                   placeholder="your.email@example.com"
                   value={formData.email}
-                  onChange={handleChange}
+           
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
                 />
@@ -138,7 +115,7 @@ const ContactSection = () => {
                   id="subject"
                   placeholder="Project collaboration"
                   value={formData.subject}
-                  onChange={handleChange}
+               
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
                 />
@@ -154,7 +131,7 @@ const ContactSection = () => {
                   rows="6"
                   placeholder="Tell me about your project..."
                   value={formData.message}
-                  onChange={handleChange}
+          
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300 resize-none"
                 ></textarea>
