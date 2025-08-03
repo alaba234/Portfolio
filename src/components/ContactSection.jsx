@@ -172,7 +172,7 @@ const ContactSection = () => {
                   name="subject"
                   id="subject"
                   placeholder="Project collaboration"
-                  value={formData.email}
+                  value={formData.subject}
                   onChange={handleChange}
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
