@@ -80,14 +80,13 @@ function AboutSection() {
 
             {/* Skill Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-gray-800 p-2 rounded-lg shadow-lg flex flex-col items-center text-center md:items-start md:text-left border border-gray-700 hover:border-gradient-start transition-colors duration-300">
+              <div className="bg-gray-800 p-4  rounded-lg shadow-lg flex flex-col items-center text-center md:items-start md:text-left border border-gray-700 hover:border-gradient-start transition-colors duration-300">
                 <FaLaptopCode className="text-gradient-start text-xl mb-2" />
                 <h3 className="font-bold text-base mb-2">
                   Software Development
                 </h3>
                 <p className="text-sm text-gray-400">
-                  Full-stack web applications with modern frameworks and best
-                  practices
+                  Modern software design, development, and deployment
                 </p>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center text-center md:items-start md:text-left border border-gray-700 hover:border-gradient-start transition-colors duration-300">
@@ -111,20 +110,20 @@ function AboutSection() {
             <div className="flex flex-col sm:flex-row gap-8 md:gap-4">
               <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col  border border-gray-700 hover:border-gradient-start transition-colors duration-300 w-full min-w-[200px]">
                 <h3 className="text-2xl font-bold text-gradient-start mb-2">
-                  50+
+                  Bachelor Thesis
                 </h3>
-                <p className="text-base text-gray-300">Projects</p>
+                <p className="text-base text-gray-300">Classification of data sets using the electric potential</p>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col  border border-gray-700 hover:border-gradient-start transition-colors duration-300 w-full min-w-[200px]">
                 <h3 className="text-2xl font-bold text-gradient-start mb-2">
-                  4+
+                  20+
                 </h3>
-                <p className="text-base text-gray-300">Years Experience</p>
+                <p className="text-base text-gray-300">Mentored Students</p>
               </div>
             </div>
           </div>
           {/* Right Column: Image with Badges - UNCOMMENT THIS BLOCK */}
-          <div className="relative w-full h-64 lg:h-[250px] flex justify-center items-center lg:w-1/3 lg:flex-shrink-0 lg:flex-grow-0">
+          <div className="relative w-full h-64 lg:h-[250px] flex justify-center items-center lg:w-1/3 lg:flex-shrink-0 lg:flex-grow-0 lg:mt-24" >
             <img
               src={aboutImagePath}
               alt="About Me"
@@ -133,10 +132,6 @@ function AboutSection() {
             {/* Master's Student Badge */}
             <div className="absolute top-4 right-4 bg-gray-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md flex items-center gap-2">
               <span className="text-gradient-start">🎓</span> Master's Student
-            </div>
-            {/* Honor Graduate Badge */}
-            <div className="absolute bottom-4 left-4 bg-gray-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md flex items-center gap-2">
-              <span className="text-gradient-start">🏆</span> Honor Graduate
             </div>
           </div>
           {/* END OF UNCOMMENTED BLOCK */}
@@ -147,6 +142,11 @@ function AboutSection() {
             My Journey
           </h2>
           <Timeline />
+        </div>
+
+        <div> 
+        
+         
         </div>
       </div>
     </section>

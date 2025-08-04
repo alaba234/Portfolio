@@ -8,7 +8,7 @@ const projectsData = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?fit=crop&w=800&q=80",
+      "/Kraft_3Dimensional_3Klassen.jpg",
     title: "Classification of Data Sets using the Electric Potential",
     description:
       "Research project focuses on finding a new machine learning algorithm to classify data sets based on the electric potential.",
@@ -22,10 +22,10 @@ const projectsData = [
   },
   {
     id: 2,
-    image:"/diy3DScanner.png",
+    image:"/diy3dscanner.jpg",
     title: "DIY 3D-Scanner",
     description:
-      "Embedded systems project for a 3D scanner using a LiDAR sensor",
+      "Embedded systems project for a 3D scanner using a LiDAR sensor.",
     tags: [
       "C",
       "ESP32",
@@ -40,11 +40,11 @@ const projectsData = [
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1610484732126-72f88b56d3c3?fit=crop&w=800&q=80",
+      "/PCB.png",
     title:
       "LoRa-based system for presence detection in university learning areas",
     description:
-      "LoRa Mesh based on Meshtastic for the transmission and visulization with a web interface",
+      "LoRa Mesh based on Meshtastic for the transmission and visulization with a web interface.",
     tags: [
       "Raspberry Pi Pico",
       "C",
@@ -65,32 +65,7 @@ const projectsData = [
   {
     id: 4,
     image:
-      "https://images.unsplash.com/photo-1610484732126-72f88b56d3c3?fit=crop&w=800&q=80",
-    title:
-      "LoRa-based system for presence detection in university learning areas",
-    description:
-      "LoRa Mesh based on Meshtastic for the transmission and visulization with a web interface",
-    tags: [
-      "Raspberry Pi Pico",
-      "C",
-      "Meshtastic",
-      "MMWave Sensors",
-      "Grafana",
-      "NodeJS",
-      "LoRa",
-      "Web Development",
-      "PCB Design",
-      "CAD",
-      "3D Printing",
-      "InfluxDB",
-      "BMS",
-    ],
-  },
-
-  {
-    id: 5,
-    image:
-      "https://images.unsplash.com/photo-1610484732126-72f88b56d3c3?fit=crop&w=800&q=80",
+      "react.png",
     title:
       "Portfolio Website",
     description:
@@ -98,20 +73,20 @@ const projectsData = [
     tags: ["React", "Tailwind CSS", "JavaScript", "Web Development", , "GitHub"],
   },
   {
-    id: 6,
+    id: 5,
     image:
-      "https://images.unsplash.com/photo-1610484732126-72f88b56d3c3?fit=crop&w=800&q=80",
+      "/nexus.png",
     title:
       "Version Control Program",
     description:`A version control
                 tool that provides clear access to project versions and related metadata for a Nexus Repository.
-                It supports Nexus login, offline projects, and ensures usability even without an internet connection`,
+                It supports Nexus login, offline projects, and ensures usability even without an internet connection.`,
     tags: ["Java", "JavaFX", "REST API", "Nexus Repository", 'Mock-Ups', 'SQLLite', , "GitHub"],
   },
   {
-    id: 7,
+    id: 6,
     image:
-      "https://images.unsplash.com/photo-1610484732126-72f88b56d3c3?fit=crop&w=800&q=80",
+      "/expectedResult.png",
     title: "Expected Results Tool",
     description:
       `An application that calculates pressure, gas, and limit values based on user input. 
@@ -120,18 +95,18 @@ const projectsData = [
     tags: ["Python", "Tkinter"],
   },
   {
-    id: 8,
+    id: 7,
     image:
-      "https://images.unsplash.com/photo-1610484732126-72f88b56d3c3?fit=crop&w=800&q=80",
+      "/xml.png ",
     title: "Syntage Editor",
     description:`Further development on an exisiting editor for the editing of XML-files based on
     GitHub tickets of different complexities.`,
     tags: ["Java", "XML", "GitHub"],
   },
   {
-    id: 9,
+    id: 8,
     image:
-      "https://images.unsplash.com/photo-1610484732126-72f88b56d3c3?fit=crop&w=800&q=80",
+      "WordGenerator.png",
     title: "Tool for the creation of DOC-documents from HTML-files",
     description: `A internal tool originally written as a Python script to convert HTML files into a Word document
       was extended with a graphical user interface. Implementation and testing of the UI for selecting input

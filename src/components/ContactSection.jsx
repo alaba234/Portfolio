@@ -8,18 +8,11 @@ import {
 } from "react-icons/fa";
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+
 
 
   return (
@@ -66,7 +59,6 @@ const ContactSection = () => {
               method="POST" // Use the POST method
               data-netlify="true" // This is the key attribute for Netlify Forms
               data-netlify-honeypot="bot-field" // An anti-spam field
-              onSubmit={handleSubmit}
               className="w-full flex flex-col gap-4"
             
             >
@@ -82,7 +74,7 @@ const ContactSection = () => {
                   name="name"
                   id="name"
                   placeholder="Your name"
-                  value={formData.name}
+               
                 
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
@@ -98,7 +90,7 @@ const ContactSection = () => {
                   name="email"
                   id="email"
                   placeholder="your.email@example.com"
-                  value={formData.email}
+               
            
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
@@ -114,7 +106,7 @@ const ContactSection = () => {
                   name="subject"
                   id="subject"
                   placeholder="Project collaboration"
-                  value={formData.subject}
+                 
                
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
@@ -130,7 +122,7 @@ const ContactSection = () => {
                   id="message"
                   rows="6"
                   placeholder="Tell me about your project..."
-                  value={formData.message}
+              
           
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300 resize-none"
