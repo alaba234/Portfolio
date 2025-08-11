@@ -28,7 +28,7 @@ const TimelineItem = ({ item }) => {
       >
         <p className="text-sm text-gray-400 mb-1">{item.date}</p>
         <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-        <p className="text-md text-neon-green mb-2">{item.company}</p>
+        <p className="text-md text-gradient-start mb-2">{item.company}</p>
         <p className="text-sm text-gray-300 leading-relaxed">{item.description}</p>
       </div>
     </div>

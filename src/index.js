@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { ThemeProvider } from './ThemeContext';
+import { BrowserRouter } from 'react-router-dom';
+import "leaflet/dist/leaflet.css";
 
 // Add this block to disable scroll restoration on navigation
 /* eslint-disable no-restricted-globals */ // <--- Place this above the block
@@ -15,7 +17,9 @@ if ('scrollRestoration' in history) {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>  
     </ThemeProvider>
   </React.StrictMode>
 );

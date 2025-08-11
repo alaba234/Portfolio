@@ -5,6 +5,7 @@ import { FaLaptopCode, FaMicrochip, FaBolt } from "react-icons/fa";
 import Timeline from "./Timeline.jsx"; // Import the Timeline component
 import useScrollFadeOut from "../hooks/useScrollFadeOut";
 import useIsMobile from "../hooks/useIsMobile"; // Import the custom hook
+import InteractiveContentSection from "./InteractiveContentSection.jsx"; // Import the new interactive content section
 
 function AboutSection() {
   const aboutImagePath = "/thu.png"; // Make sure this image exists in your public folder!
@@ -13,7 +14,6 @@ function AboutSection() {
 
   const sectionRef = useRef(null);
   const isMobile = useIsMobile(); // Use the new hook to detect mobile view
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,7 +44,6 @@ function AboutSection() {
   const scrollOpacity = useScrollFadeOut(sectionRef, 0.9);
   const contentOpacity = isMobile ? 1 : scrollOpacity; // Adjust opacity based on mobile view
 
-
   return (
     <section
       id="about"
@@ -53,7 +52,11 @@ function AboutSection() {
       <div className="container mx-auto max-w-6xl">
         {/* Top Section: Text and Image */}
         {/* This is the div controlling the flex layout for the two columns */}
-        <div  ref={sectionRef} style={{ opacity: contentOpacity }} className="flex flex-col lg:flex-row items-start gap-12 mb-16">
+        <div
+          ref={sectionRef}
+          style={{ opacity: contentOpacity }}
+          className="flex flex-col lg:flex-row items-start gap-12 mb-16"
+        >
           {" "}
           {/* Assuming you changed items-center to items-start */}
           {/* Left Column: Text Content (this stays the same) */}
@@ -112,7 +115,9 @@ function AboutSection() {
                 <h3 className="text-2xl font-bold text-gradient-start mb-2">
                   Bachelor Thesis
                 </h3>
-                <p className="text-base text-gray-300">Classification of data sets using the electric potential</p>
+                <p className="text-base text-gray-300">
+                  Classification of data sets using the electric potential
+                </p>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col  border border-gray-700 hover:border-gradient-start transition-colors duration-300 w-full min-w-[200px]">
                 <h3 className="text-2xl font-bold text-gradient-start mb-2">
@@ -123,7 +128,7 @@ function AboutSection() {
             </div>
           </div>
           {/* Right Column: Image with Badges - UNCOMMENT THIS BLOCK */}
-          <div className="relative w-full h-64 lg:h-[250px] flex justify-center items-center lg:w-1/3 lg:flex-shrink-0 lg:flex-grow-0 lg:mt-24" >
+          <div className="relative w-full h-64 lg:h-[250px] flex justify-center items-center lg:w-1/3 lg:flex-shrink-0 lg:flex-grow-0 lg:mt-24">
             <img
               src={aboutImagePath}
               alt="About Me"
@@ -143,11 +148,9 @@ function AboutSection() {
           </h2>
           <Timeline />
         </div>
-
-        <div> 
-        
-         
-        </div>
+         <div id="hobbies" className="mt-16 w-full">
+         <InteractiveContentSection />
+      </div>
       </div>
     </section>
   );
