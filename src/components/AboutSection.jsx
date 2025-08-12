@@ -143,7 +143,7 @@ function AboutSection() {
         </div>
 
         <div className="mt-16 mb-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-center lg:text-left mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center lg:text-left mb-12 items-center justify-center flex">
             My Journey
           </h2>
           <Timeline />

@@ -5,19 +5,19 @@ import { Link } from 'react-router-dom';
 const hobbies = [
   {
     icon: <FaGlobeAmericas size={40} />,
-    label: 'My Travels',
+    label: 'Travels',
     link: '/travels',
     img: './bilboHouse.jpg', // replace with your image
   },
   {
     icon: <FaBookOpen size={40} />,
-    label: 'Books that Shaped Me',
+    label: 'Books',
     link: '/books',
     img: './books.jpg', // replace with your image
   },
   {
     icon: <FaMusic size={40} />,
-    label: 'Favorite Music',
+    label: 'Music',
     link: '/music',
     img: './ofMonstersAndMen.jpg', // replace with your image
   },
@@ -30,7 +30,7 @@ const InteractiveContentSection = () => {
       className="relative w-full bg-dark-theme-bg py-16 px-8 md:px-6 lg:px-24"
     >
       <h3 className="text-4xl font-bold text-center text-white mb-12">
-        My Interests
+       Get to know me
       </h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl mx-auto">

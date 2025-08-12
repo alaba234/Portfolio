@@ -144,14 +144,14 @@ const TravelsPage = () => {
   };
 
   return (
-    <div className="bg-dark-theme-bg text-dark-theme-text min-h-screen py-16 px-8 md:px-16 lg:px-16">
+    <div className="bg-dark-theme-bg text-dark-theme-text min-h-screen py-16 px-8 md:px-16 lg:px-24">
       {/* Header row with back button and title */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="relative flex items-center justify-center mb-12">
         <button
           onClick={handleBackClick}
           className="text-white hover:text-gradient-start transition-colors duration-300"
         >
-          <FaArrowLeft size={24} />
+          <FaArrowLeft size={28} />
         </button>
         <h2 className="text-4xl font-bold text-white text-center flex-1">
           My Travels

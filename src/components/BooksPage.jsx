@@ -1,43 +1,44 @@
-// src/components/BooksPage.jsx
-import React from 'react';
+import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-// Data for the books, updated to include image URLs and a description
 const booksData = [
   {
-    title: 'Atomic Habits',
-    author: 'James Clear',
-    imageUrl: 'https://placehold.co/200x300/555/fff?text=Atomic+Habits',
-    description: 'A practical guide to building good habits and breaking bad ones.',
+    title: "Atomic Habits",
+    author: "James Clear",
+    imageUrl: "/atomicHabits.jpg",
+    description:
+      "A practical guide to building good habits and breaking bad ones.",
   },
   {
-    title: 'Rich Dad Poor Dad',
-    author: 'Robert Kiyosaki',
-    imageUrl: 'https://placehold.co/200x300/555/fff?text=Rich+Dad',
-    description: 'An eye-opener on wealth, assets, and financial literacy.',
+    title: "Lord of the Rings - The Fellowship of the Ring",
+    author: "J.R.R. Tolkien",
+    imageUrl: "./lotr.jpg",
+    description:
+      "As a huge fan of the movie adpations, I had to read the books as well. The first book is a great introduction to the world of Middle-earth.",
   },
   {
-    title: 'The Alchemist',
-    author: 'Paulo Coelho',
-    imageUrl: 'https://placehold.co/200x300/555/fff?text=The+Alchemist',
-    description: 'A magical journey of following one\'s dreams.',
+    title: "A song of Ice and Fire - A Game of Thrones",
+    author: "George R.R. Martin",
+    imageUrl: "./gameOfThrones.jpg",
+    description:
+      "Never ever have I read a book that was so hard to put down. I became obsessed with this world and read everything George R.R. Martin has written about it.",
   },
   {
-    title: 'Eat That Frog',
-    author: 'Brian Tracy',
-    imageUrl: 'https://placehold.co/200x300/555/fff?text=Eat+That+Frog',
-    description: 'A motivational book on overcoming procrastination.',
+    title: "The subtle art of not giving a f*ck",
+    author: "Mark Manson",
+    imageUrl: "./subtleArt.jpg",
+    description:
+      "Helped me with my mindset and how to approach life's challenges.",
   },
   {
-    title: 'Thinking, Fast and Slow',
-    author: 'Daniel Kahneman',
-    imageUrl: 'https://placehold.co/200x300/555/fff?text=Thinking+Fast+and+Slow',
-    description: 'Profound insights into cognitive biases and human decision-making.',
+    title: "The Man in the High Castle",
+    author: "Philip K. Dick",
+    imageUrl: "./manInTheHighCastle.jpg",
+    description:
+      'Explores a fascinating "What If" scenario and sparked a huge interest in my countries dark history',
   },
 ];
-
-
 
 const BooksPage = () => {
   const navigate = useNavigate();
@@ -45,42 +46,45 @@ const BooksPage = () => {
   const handleBackClick = () => {
     navigate("/", { state: { scrollTo: "hobbies" } });
   };
+
   return (
     <div className="bg-dark-theme-bg text-dark-theme-text min-h-screen py-16 px-8 md:px-16 lg:px-24">
-      {/* Page Title and Subtitle, styled to match the image */}
-      <div className="text-center mb-12">
+      {/* Header with arrow on far left and title centered */}
+      <div className="relative flex items-center justify-center mb-12">
         <button
-                  onClick={handleBackClick}
-                  className="text-white hover:text-gradient-start transition-colors duration-300"
-                >
-                  <FaArrowLeft size={24} />
-                </button>
-        <h2 className="text-4xl font-bold text-white mb-2">
-          Books That Shaped My Journey
+          onClick={handleBackClick}
+          className="absolute left-0 text-white hover:text-gradient-start transition-colors duration-300"
+        >
+          <FaArrowLeft size={28} />
+        </button>
+        <h2 className="text-4xl font-bold text-white text-center">
+          Books that I love
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          These books have influenced my perspectives, motivation, and self-growth.
-        </p>
       </div>
 
-      {/* Horizontal scrollable container for the book cards */}
+      {/* Subtitle */}
+      <p className="text-center text-gray-400 max-w-2xl mx-auto mb-8">
+        These books have influenced my perspectives, motivation, and
+        self-growth.
+      </p>
+
+      {/* Scrollable books list */}
       <div className="flex flex-nowrap overflow-x-auto gap-6 pb-4">
         {booksData.map((item, index) => (
-          <div 
-            key={index} 
-            className="flex-shrink-0 w-64 bg-gray-800 p-4 rounded-lg shadow-lg border border-gray-700"
+          <div
+            key={index}
+            className="flex-shrink-0 w-64 bg-gray-800 p-4 rounded-lg shadow-lg border border-gray-700 
+                       transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-gradient-start/30"
           >
-            {/* Book cover image */}
-            <img 
-              src={item.imageUrl} 
-              alt={item.title} 
+            <img
+              src={item.imageUrl}
+              alt={item.title}
               className="w-full h-80 object-cover rounded-md mb-4"
             />
-            {/* Book title */}
-            <h4 className="text-xl font-bold text-gradient-start mb-1">{item.title}</h4>
-            {/* Author */}
+            <h4 className="text-xl font-bold text-gradient-start mb-1">
+              {item.title}
+            </h4>
             <p className="text-base text-gray-400 mb-2">{item.author}</p>
-            {/* Description */}
             <p className="text-gray-300 text-sm">{item.description}</p>
           </div>
         ))}

@@ -81,7 +81,7 @@ const projectsData = [
     description:`A version control
                 tool that provides clear access to project versions and related metadata for a Nexus Repository.
                 It supports Nexus login, offline projects, and ensures usability even without an internet connection.`,
-    tags: ["Java", "JavaFX", "REST API", "Nexus Repository", 'Mock-Ups', 'SQLLite', , "GitHub"],
+    tags: ["Java", "JavaFX", "REST API", "Nexus Repository", 'Mock-Ups', 'SQLLite', ],
   },
   {
     id: 6,
@@ -101,7 +101,7 @@ const projectsData = [
     title: "Syntage Editor",
     description:`Further development on an exisiting editor for the editing of XML-files based on
     GitHub tickets of different complexities.`,
-    tags: ["Java", "XML", "GitHub"],
+    tags: ["Java", "XML",],
   },
   {
     id: 8,

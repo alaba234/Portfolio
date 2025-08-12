@@ -35,15 +35,15 @@ const ContactSection = () => {
 
             <div className="space-y-6 text-gray-300 mb-12">
               <div className="flex items-center justify-center lg:justify-start space-x-4">
-                <FaEnvelope className="text-neon-green text-xl" />
+                <FaEnvelope className="text-gradient-start text-xl" />
                 <span>johannes.hirt@t-online.de</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start space-x-4">
-                <FaPhone className="text-neon-green text-xl" />
+                <FaPhone className="text-gradient-start text-xl" />
                 <span>+4915121730329</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start space-x-4">
-                <FaMapMarkerAlt className="text-neon-green text-xl" />
+                <FaMapMarkerAlt className="text-gradient-start text-xl" />
                 <span>Ulm, DE</span>
               </div>
             </div>
