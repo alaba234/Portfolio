@@ -7,8 +7,9 @@ import { FaTimes } from 'react-icons/fa';
  *
  * @param {Object} props
  * @param {Object} props.content - The data for the country to display.
- * @param {string} props.content.id - The country's ISO Alpha-3 code.
- * @param {string} props.content.properties.name - The country's name.
+ * @param {string} props.content.title - The title of the travel experience.
+ * @param {string} props.content.description - The description of the travel experience.
+ * @param {string} props.content.imageUrl - The URL of an image for the travel experience.
  * @param {function} props.onClose - The function to close the modal.
  * @returns {JSX.Element} The modal pop-up component.
  */
@@ -25,18 +26,16 @@ const CountryModal = ({ content, onClose }) => {
           <FaTimes size={24} />
         </button>
         <h2 className="text-3xl font-bold text-white mb-4">
-          Travels in {content.properties.name}
+          {content.title}
         </h2>
         <div className="flex flex-col md:flex-row gap-4 mb-4">
-          {/* Placeholder image for the country */}
           <img
-            src={`https://placehold.co/300x200/555/fff?text=${content.properties.name}`}
-            alt={`A view of ${content.properties.name}`}
+            src={content.imageUrl}
+            alt={content.title}
             className="w-full md:w-1/2 rounded-lg object-cover"
           />
-          {/* Textbox with mock content */}
           <p className="text-gray-300 w-full md:w-1/2">
-            This is a placeholder for your travel memories and experiences in {content.properties.name}. You can describe the places you visited, the food you tried, and the people you met.
+            {content.description}
           </p>
         </div>
       </div>

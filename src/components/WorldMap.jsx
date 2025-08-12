@@ -43,20 +43,20 @@ const WorldMap = ({ visitedCountries, onCountryClick }) => {
         // Conditional color for visited, hovered, and unvisited countries
         polygonCapColor={({ id }) => {
           if (hoveredCountry && hoveredCountry.id === id) {
-            return '#ffcc00'; // Light orange for hover
+            return '#ffffff'; // white for hovered country
           }
           return visitedCountries.includes(id)
-            ? '#ff9800' // Orange for visited
+            ? '#36d1dc' // Orange for visited
             : '#444444'; // Dark grey for unvisited
         }}
         
         // Conditional color for polygon sides
         polygonSideColor={({ id }) => {
           if (hoveredCountry && hoveredCountry.id === id) {
-            return '#ffe082'; // Lighter orange for hover side
+            return '#ffffff'; // white for hovered country side
           }
           return visitedCountries.includes(id)
-            ? '#ffb74d' // Lighter orange for visited side
+            ? '#ffffff' // Lighter orange for visited side
             : '#222222'; // Darker grey for unvisited side
         }}
         
