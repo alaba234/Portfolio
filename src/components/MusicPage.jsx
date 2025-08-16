@@ -8,7 +8,7 @@ const musicData = [
     artist: "Kishi Bashi",
     genre: "Alternative",
     text: "Beautifully orchestrated and interpreted differently every time you listen to it.",
-    imageUrl: "./antichrist .jpeg",
+    imageUrl: "./antichrist.jpeg",
     spotifyUrl: "https://open.spotify.com/intl-de/track/29jtZGdgpE2lWm2mkIt6HS", // example link
   },
   {
@@ -39,7 +39,7 @@ const musicData = [
     title: "28",
     artist: "Zach Bryan",
     genre: "Country",
-    text: "Makes me feel thankful and lucky to be alive ",
+    text: "Extremely personal country song by Zach Bryan.",
     imageUrl: "twentyEight.jpg",
     spotifyUrl: "https://open.spotify.com/intl-de/track/5iJKGpnFfvbjZJeAtwXfCj", // example link
   },
