@@ -51,6 +51,8 @@ const expertiseData = [
 ];
 
 const SkillsSection = () => {
+
+
   const skillsContainerRef = useRef(null); // Ref for the main skills container
   const otherSkillsCard = useRef(null); // Ref for the other skills card
   const skillCardsOpacity = useScrollFadeOut(skillsContainerRef, 0.5); // Use the custom hook for scroll fade-out effect
@@ -58,29 +60,30 @@ const SkillsSection = () => {
 
   const [hasBeenViewed, setHasBeenViewed] = useState(false); // State to trigger animation
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !hasBeenViewed) {
-            setHasBeenViewed(true);
-            observer.disconnect(); // Stop observing after it's been viewed once
-          }
-        });
-      },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
-    );
 
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasBeenViewed) {
+          setHasBeenViewed(true);
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: window.innerWidth < 768 ? 0.2 : 0.5 } // 20% for mobile, 50% for desktop
+  );
+
+  if (skillsContainerRef.current) {
+    observer.observe(skillsContainerRef.current);
+  }
+
+  return () => {
     if (skillsContainerRef.current) {
-      observer.observe(skillsContainerRef.current);
+      observer.unobserve(skillsContainerRef.current);
     }
-
-    return () => {
-      if (skillsContainerRef.current) {
-        observer.unobserve(skillsContainerRef.current);
-      }
-    };
-  }, [hasBeenViewed]);
+  };
+}, [hasBeenViewed]);
 
   return (
     <section id="skills" className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24 min-h-screen flex items-center justify-center">

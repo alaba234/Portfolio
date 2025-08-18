@@ -1,48 +1,50 @@
-// src/hooks/useScrollFadeOut.js
 import { useState, useEffect, useCallback } from 'react';
 
 /**
- * A custom hook for a scroll-based fade-out effect that is responsive.
+ * A custom hook for a scroll-based fade-out effect that disables itself on mobile.
  * @param {object} ref - A React ref object attached to the element to observe.
  * @param {number} thresholdFactor - A factor (e.g., 0.5) to determine the fade distance as a percentage of the element's height.
+ * @param {number} mobileBreakpoint - Width below which the fade effect is disabled (default 768px).
  * @returns {number} The calculated opacity value (0 to 1).
  */
-const useScrollFadeOut = (ref, thresholdFactor = 0.5) => {
+const useScrollFadeOut = (ref, thresholdFactor = 0.5, mobileBreakpoint = 768) => {
   const [contentOpacity, setContentOpacity] = useState(1);
 
-  // A memoized function to handle the scroll logic
   const handleScroll = useCallback(() => {
+    // Disable fade on mobile
+    if (window.innerWidth < mobileBreakpoint) {
+      setContentOpacity(1);
+      return;
+    }
+
     const element = ref.current;
     if (!element) return;
 
     const elementRect = element.getBoundingClientRect();
-    const elementTopRelativeToViewport = elementRect.top;
-    
-    // Calculate a dynamic threshold based on the element's height
+    const elementTop = elementRect.top;
+
     const dynamicFadeThreshold = elementRect.height * thresholdFactor;
 
     let newOpacity = 1;
-    // Fade out when the top of the element is within the dynamicFadeThreshold of the viewport's top
-    if (elementTopRelativeToViewport <= 0) {
-      const scrolledPastAmount = -elementTopRelativeToViewport;
-      newOpacity = 1 - (scrolledPastAmount / dynamicFadeThreshold);
+    if (elementTop <= 0) {
+      const scrolledPastAmount = -elementTop;
+      newOpacity = 1 - scrolledPastAmount / dynamicFadeThreshold;
     }
-    
-    // Clamp the opacity value between 0.2 and 1
+
     newOpacity = Math.max(0.2, Math.min(1, newOpacity));
     setContentOpacity(newOpacity);
-  }, [ref, thresholdFactor]);
+  }, [ref, thresholdFactor, mobileBreakpoint]);
 
   useEffect(() => {
-    if (ref.current) {
-      window.addEventListener('scroll', handleScroll);
-      handleScroll();
-    }
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // recalc on resize
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
-  }, [ref, handleScroll]);
+  }, [handleScroll]);
 
   return contentOpacity;
 };
