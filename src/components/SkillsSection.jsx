@@ -30,7 +30,7 @@ const skillsData = [
       { name: 'C', percentage: '70%' },
       { name: 'Microcontrollers(Arduino, Raspberry Pi, ESP, AT)', percentage: '80%' },
       { name: 'FPGA/Verilog', percentage: '10%' },
-      { name: 'Real-time Systems', percentage: '83%' },
+      { name: 'Real-time Systems', percentage: '80%' },
       { name: 'PCB Design', percentage: '80%' },
       {name: 'CAD', percentage: '70%' },
       {name: 'Integrated Sensors', percentage: '90%' },
