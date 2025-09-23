@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 const useIsMobile = (maxWidth = 768) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= maxWidth);
-    };
+      setIsMobile(window.innerWidth <= maxWidth)
+    }
 
     // Set initial value
-    handleResize();
+    handleResize()
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [maxWidth]);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [maxWidth])
 
-  return isMobile;
-};
+  return isMobile
+}
 
-export default useIsMobile;
+export default useIsMobile

@@ -1,36 +1,28 @@
 // src/components/ContactSection.jsx
-import React, { useState } from "react";
-import { FaPaperPlane } from "react-icons/fa";
-import {
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import React, { useState } from 'react'
+import { FaPaperPlane } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
 
 const ContactSection = () => {
-
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-
-
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   return (
     <section
       id="contact"
-      className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24"
-    >
+      className="bg-dark-theme-bg text-dark-theme-text py-16 px-8 md:px-16 lg:px-24">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Get In Touch
+        </h2>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
           {/* Left Column: Contact Info */}
           <div className="flex-1 text-center lg:text-left">
             <h3 className="text-3xl font-bold mb-4">Let's Connect</h3>
             <p className="text-gray-300 leading-relaxed mb-8">
-              I'm always interested in discussing new opportunities, innovative
-              projects, or collaborating on exciting challenges. Feel free to
-              reach out!
+              I'm always interested in discussing new opportunities,
+              innovative projects, or collaborating on exciting challenges.
+              Feel free to reach out!
             </p>
 
             <div className="space-y-6 text-gray-300 mb-12">
@@ -49,7 +41,6 @@ const ContactSection = () => {
             </div>
 
             {/* Social Media Icons */}
-           
           </div>
 
           {/* Right Column: Contact Form */}
@@ -59,9 +50,7 @@ const ContactSection = () => {
               method="POST" // Use the POST method
               data-netlify="true" // This is the key attribute for Netlify Forms
               data-netlify-honeypot="bot-field" // An anti-spam field
-              className="w-full flex flex-col gap-4"
-            
-            >
+              className="w-full flex flex-col gap-4">
               {/* A hidden field for Netlify Forms */}
               <input type="hidden" name="form-name" value="contact" />
 
@@ -74,8 +63,6 @@ const ContactSection = () => {
                   name="name"
                   id="name"
                   placeholder="Your name"
-               
-                
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
                 />
@@ -90,8 +77,6 @@ const ContactSection = () => {
                   name="email"
                   id="email"
                   placeholder="your.email@example.com"
-               
-           
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
                 />
@@ -106,8 +91,6 @@ const ContactSection = () => {
                   name="subject"
                   id="subject"
                   placeholder="Project collaboration"
-                 
-               
                   required
                   className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300"
                 />
@@ -122,26 +105,21 @@ const ContactSection = () => {
                   id="message"
                   rows="6"
                   placeholder="Tell me about your project..."
-              
-          
                   required
-                  className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300 resize-none"
-                ></textarea>
+                  className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-green transition-colors duration-300 resize-none"></textarea>
               </div>
               {/* Submit Button */}
               <div>
                 <button
                   disabled={isSubmitting}
                   type="submit"
-                  className="w-full p-4 rounded-lg text-white font-bold bg-gradient-to-r from-neon-green to-blue-500 hover:scale-105 transform transition-transform duration-300 shadow-md"
-                >
-                  {isSubmitting ? (
+                  className="w-full p-4 rounded-lg text-white font-bold bg-gradient-to-r from-neon-green to-blue-500 hover:scale-105 transform transition-transform duration-300 shadow-md">
+                  {isSubmitting ?
                     <span>Sending...</span>
-                  ) : (
-                    <>
+                  : <>
                       <span>Send Message</span>
                     </>
-                  )}
+                  }
                 </button>
               </div>
             </form>
@@ -149,7 +127,7 @@ const ContactSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ContactSection;
+export default ContactSection

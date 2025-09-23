@@ -1,6 +1,6 @@
 // src/components/Timeline.jsx
-import React from 'react';
-import TimelineItem from './TimelineItem'; // Import the new component
+import React from 'react'
+import TimelineItem from './TimelineItem' // Import the new component
 
 // This is where you can easily expand your timeline!
 const timelineData = [
@@ -8,9 +8,11 @@ const timelineData = [
   {
     id: 1,
     date: 'March 2025 - Present',
-    title: 'Master of Engineering in Systems Engineering and Management with specialization in electrical engineering',
+    title:
+      'Master of Engineering in Systems Engineering and Management with specialization in electrical engineering',
     company: 'Technichal University of Applied Sciences Ulm',
-    description: 'In-depth engineering skills in the areas of hardware and software, but also business skills in areas such as finance and human resources.',
+    description:
+      'In-depth engineering skills in the areas of hardware and software, but also business skills in areas such as finance and human resources.',
     alignment: 'left',
   },
   {
@@ -44,10 +46,11 @@ const timelineData = [
     date: 'September 2021 - June 2024',
     title: 'Student Assistant',
     company: 'Hochschule Heilbronn',
-    description: 'Student assistant in the subject “Work Techniques and Design Thinking”.',
+    description:
+      'Student assistant in the subject “Work Techniques and Design Thinking”.',
     alignment: 'left',
   },
-  
+
   {
     id: 6,
     date: 'March 2023 - August 2023',
@@ -62,11 +65,12 @@ const timelineData = [
     date: 'September 2022 - January 2023',
     title: 'Exchange Semester',
     company: 'Northumbria University ',
-    description: 'Exchange Student at Northumbria University in Newcastle Upon Tyne, England.',
+    description:
+      'Exchange Student at Northumbria University in Newcastle Upon Tyne, England.',
     alignment: 'left',
   },
 
-   {
+  {
     id: 8,
     date: 'September 2017 - July 2020',
     title: 'High School Diploma (1,9)',
@@ -74,7 +78,7 @@ const timelineData = [
     description: 'Graduated with a focus on computer science ',
     alignment: 'right',
   },
-];
+]
 
 const Timeline = () => {
   return (
@@ -84,13 +88,13 @@ const Timeline = () => {
 
       {/* Container for all the timeline events */}
       <div className="space-y-12">
-        {timelineData.map((item) => (
+        {timelineData.map(item => (
           // Render the new TimelineItem component for each item
           <TimelineItem key={item.id} item={item} />
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline

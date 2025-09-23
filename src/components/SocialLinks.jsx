@@ -1,6 +1,6 @@
 // src/components/SocialLinks.jsx
-import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import React from 'react'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 function SocialLinks() {
   return (
@@ -10,8 +10,7 @@ function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub Profile"
-        className="p-3 rounded-full bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors hover:scale-110 transform"
-      >
+        className="p-3 rounded-full bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors hover:scale-110 transform">
         <FaGithub size={24} />
       </a>
       <a
@@ -19,19 +18,17 @@ function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn Profile"
-        className="p-3 rounded-full bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors hover:scale-110 transform"
-      >
+        className="p-3 rounded-full bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors hover:scale-110 transform">
         <FaLinkedin size={24} />
       </a>
       <a
         href="mailto:johannes.hirt@t-online.de"
         aria-label="Send me an Email"
-        className="p-3 rounded-full bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors hover:scale-110 transform"
-      >
+        className="p-3 rounded-full bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors hover:scale-110 transform">
         <FaEnvelope size={24} />
       </a>
     </div>
-  );
+  )
 }
 
-export default SocialLinks;
+export default SocialLinks
