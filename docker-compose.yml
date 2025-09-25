@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  react-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app     # synchronisiert Host <-> Container
+      - /app/node_modules
+    command: npm start

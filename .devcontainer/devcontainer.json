@@ -1,0 +1,11 @@
+{
+  "name": "React Dev Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "react-app",
+  "workspaceFolder": "/app",
+  "forwardPorts": [3000],
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"^
+  ]
+}
