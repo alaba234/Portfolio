@@ -7,6 +7,25 @@ import useScrollFadeOut from '../hooks/useScrollFadeOut'
 const projectsData = [
   {
     id: 1,
+    image: '/unitree.jpg',
+    title: '',
+    description:
+      'Improvement of localization and self-motion estimation of the robot dog THU FRIDA.',
+    tags: [
+      'ROS2',
+      'C++',
+      'Python',
+      'Linear Alegebra',
+      'Proability Theory',
+      'Calculus',
+      'Kalman Filter',
+      'SLAM',
+      
+    ],
+  },
+
+  {
+    id: 2,
     image: '/Kraft_3Dimensional_3Klassen.jpg',
     title: 'Classification of Data Sets using the Electric Potential',
     description:
@@ -20,7 +39,7 @@ const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     image: '/diy3dscanner.jpg',
     title: 'DIY 3D-Scanner',
     description:
@@ -37,7 +56,7 @@ const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     image: '/PCB.png',
     title:
       'LoRa-based system for presence detection in university learning areas',
@@ -61,7 +80,7 @@ const projectsData = [
   },
 
   {
-    id: 4,
+    id: 5,
     image: 'react.png',
     title: 'Portfolio Website',
     description:
@@ -76,7 +95,7 @@ const projectsData = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     image: '/nexus.png',
     title: 'Version Control Program',
     description: `A version control
@@ -92,7 +111,7 @@ const projectsData = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     image: '/expectedResult.png',
     title: 'Expected Results Tool',
     description: `An application that calculates pressure, gas, and limit values based on user input. 
@@ -101,7 +120,7 @@ const projectsData = [
     tags: ['Python', 'Tkinter'],
   },
   {
-    id: 7,
+    id: 8,
     image: '/xml.png ',
     title: 'Syntage Editor',
     description: `Further development on an exisiting editor for the editing of XML-files based on
@@ -109,7 +128,7 @@ const projectsData = [
     tags: ['Java', 'XML'],
   },
   {
-    id: 8,
+    id: 9,
     image: 'WordGenerator.png',
     title: 'Tool for the creation of DOC-documents from HTML-files',
     description: `A internal tool originally written as a Python script to convert HTML files into a Word document
