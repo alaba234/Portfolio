@@ -28,6 +28,7 @@ const skillsData = [
     icon: <FaMicrochip className="text-2xl text-white mr-2" />,
     skills: [
       { name: 'C', percentage: '70%' },
+      { name: 'C++', percentage: '70%' },
       {
         name: 'Microcontrollers(Arduino, Raspberry Pi, ESP, AT)',
         percentage: '80%',
@@ -37,6 +38,7 @@ const skillsData = [
       { name: 'PCB Design', percentage: '80%' },
       { name: 'CAD', percentage: '70%' },
       { name: 'Integrated Sensors', percentage: '90%' },
+      { name: 'ROS2', percentage: '70%' },
     ],
   },
 ]
