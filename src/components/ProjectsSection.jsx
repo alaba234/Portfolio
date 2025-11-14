@@ -31,7 +31,7 @@ const projectsData = [
     image: '/unitree.jpg',
     title: '',
     description:
-      'Improvement of localization and self-motion estimation of the robot dog THU FRIDA.',
+      'Improvement of localization and self-motion estimation of a Unitree Go1 robots.',
     tags: [
       'ROS2',
       'C++',
