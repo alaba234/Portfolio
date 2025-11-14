@@ -5,8 +5,29 @@ import useScrollFadeOut from '../hooks/useScrollFadeOut'
 
 // Placeholder data for your projects - easily expandable!
 const projectsData = [
-  {
+
+    {
     id: 1,
+    image: '/suunto.jpg',
+    title: '',
+    description:
+      'Route-Based Performance Prediction: Modeling personal speed and exertion for outdoor sports',
+    tags: [
+      'Linear Regression',
+      'CNN',
+      'Python',
+      'Machine Learning',
+      'Data Analysis',
+      'Pandas',
+      'NumPy',
+      'Matplotlib',
+      'Scikit-Learn'
+      
+    ],
+  },
+
+  {
+    id: 2,
     image: '/unitree.jpg',
     title: '',
     description:
@@ -25,7 +46,7 @@ const projectsData = [
   },
 
   {
-    id: 2,
+    id: 3,
     image: '/Kraft_3Dimensional_3Klassen.jpg',
     title: 'Classification of Data Sets using the Electric Potential',
     description:
@@ -39,7 +60,7 @@ const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     image: '/diy3dscanner.jpg',
     title: 'DIY 3D-Scanner',
     description:
@@ -56,7 +77,7 @@ const projectsData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     image: '/PCB.png',
     title:
       'LoRa-based system for presence detection in university learning areas',
@@ -80,7 +101,7 @@ const projectsData = [
   },
 
   {
-    id: 5,
+    id: 6,
     image: 'react.png',
     title: 'Portfolio Website',
     description:
@@ -95,7 +116,7 @@ const projectsData = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     image: '/nexus.png',
     title: 'Version Control Program',
     description: `A version control
@@ -111,7 +132,7 @@ const projectsData = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     image: '/expectedResult.png',
     title: 'Expected Results Tool',
     description: `An application that calculates pressure, gas, and limit values based on user input. 
@@ -120,7 +141,7 @@ const projectsData = [
     tags: ['Python', 'Tkinter'],
   },
   {
-    id: 8,
+    id: 9,
     image: '/xml.png ',
     title: 'Syntage Editor',
     description: `Further development on an exisiting editor for the editing of XML-files based on
@@ -128,7 +149,7 @@ const projectsData = [
     tags: ['Java', 'XML'],
   },
   {
-    id: 9,
+    id: 10,
     image: 'WordGenerator.png',
     title: 'Tool for the creation of DOC-documents from HTML-files',
     description: `A internal tool originally written as a Python script to convert HTML files into a Word document
