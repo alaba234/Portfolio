@@ -21,6 +21,8 @@ const App = () => {
   const [showModal, setShowModal] = useState(false)
   const [modalContent, setModalContent] = useState(null)
 
+  document.title = "Johannes Hirt - Portfolio"
+
   const homepageSections = [
     'home',
     'about',
